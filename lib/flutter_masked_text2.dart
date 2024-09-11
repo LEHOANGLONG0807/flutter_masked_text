@@ -182,7 +182,7 @@ class MoneyMaskedTextController extends TextEditingController {
 
     parts.insert(parts.length - precision, '.');
 
-    return double.parse(parts.join());
+    return double.tryParse(parts.join())??0;
   }
 
   _validateConfig() {
